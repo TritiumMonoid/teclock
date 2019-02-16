@@ -13,8 +13,6 @@ class StudentClass(
     }
 
     override fun toString(): String {
-        return "$classSeries, $className, $teacher, $classroom, $start, $end"
+        return "$classSeries,$className,$teacher,$classroom,$start,$end"
     }
-
-
 }

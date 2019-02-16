@@ -23,13 +23,18 @@ class StudentScheduleNetworkProvider(
     override fun getStudentSchedule(): Future<StudentSchedule> {
         return executor.submit<StudentSchedule> {
             val token = login()
+            Log.d("NetworkProvider", "Logged in")
             try {
-                Log.d("SCHEDULE", schedule(token))
-            } catch (ex: Exception) {
-                Log.e("SCHEDULE", ex.message)
+                val schedule = schedule(token)
+                Log.d("NetworkProvider", "Fetched data")
+                schedule
+            } catch (exception: Exception) {
+                Log.e("NetworkProvider", "Didn't fetch data")
+                throw exception
+            } finally {
+                logout(token)
+                Log.d("NetworkProvider", "Logged out")
             }
-            logout(token)
-            StudentSchedule(listOf())
         }
     }
 
@@ -66,7 +71,7 @@ class StudentScheduleNetworkProvider(
         return token
     }
 
-    fun schedule(token: String): String {
+    fun schedule(token: String): StudentSchedule {
         val response = context.getString(R.string.schedule)
             .replace("\$USER", username)
             .replace("\$TOKEN", token)
@@ -112,11 +117,7 @@ class StudentScheduleNetworkProvider(
         }
 
         week.forEach { day -> day.sort() }
-        week.forEach { day ->
-            Log.d("DAY", day.toString())
-        }
-
-        return data
+        return StudentSchedule(week)
     }
 
     fun logout(token: String) {

@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         val provider = StudentScheduleProviderFactory().create(this, "", "")
         try {
             val schedule = provider.getStudentSchedule().get()
+            val schedule2 = provider.getStudentSchedule().get()
         } catch (ex: Exception) {
             Log.e("FATAL ERROR", ex.message)
         }
