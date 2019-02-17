@@ -55,13 +55,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/progressBar" android:max="100" android:progress="50"/>
-    <Button
-            android:text="..."
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/rounded_layout_bg"
-            android:layout_gravity="right"
-            android:translationY="64dp"
-            android:id="@+id/button"
-    />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"/>
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/button2" android:layout_weight="1"/>
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/button3" android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>
