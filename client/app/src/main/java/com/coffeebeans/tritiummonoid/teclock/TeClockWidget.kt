@@ -43,12 +43,13 @@ class TeClockWidget : AppWidgetProvider() {
             // Construct the RemoteViews object
             val views = RemoteViews(context.packageName, R.layout.te_clock_widget)
             val schedule = provider?.getStudentSchedule()?.get()
-            val studentClass = schedule?.getClassAt(1, 1400)
+            val studentClass = schedule?.getClassAt(1, 1500)
             if (studentClass != null) {
                 views.setTextViewText(R.id.txtClassName, studentClass?.className!!)
                 views.setTextViewText(R.id.txtTeacherName, studentClass?.teacher!!)
                 views.setTextViewText(R.id.txtClassSeries, studentClass?.classSeries!!)
                 views.setTextViewText(R.id.txtClassroom, studentClass?.classroom!!)
+                views.setTextViewText(R.id.txtClassTime, studentClass?.classTime!!)
             }
             //views.setTextViewText(R.id.appwidget_text, widgetText)
 
