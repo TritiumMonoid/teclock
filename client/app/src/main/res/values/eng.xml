@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_classes_eng">No classes available</string>
+    <string name="class_name_eng">Class name</string>
+    <string name="class_series_eng">Class series</string>
+    <string name="teacher_name_eng">Teacher name</string>
+    <string name="class_time_eng">Class time</string>
+    <string name="classroom_eng">Classroom</string>
+    <string name="emoji_eng">🔥</string>
+</resources>

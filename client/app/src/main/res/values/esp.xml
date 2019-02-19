@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_classes_esp">No hay clases disponibles</string>
+    <string name="class_name_esp">Nombre de la clase</string>
+    <string name="class_series_esp">Serie de la clase</string>
+    <string name="teacher_name_esp">Nombre del maestro</string>
+    <string name="class_time_esp">Hora de clase</string>
+    <string name="classroom_esp">Salón de clase</string>
+    <string name="emoji_esp">🔥</string>
+</resources>
